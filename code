@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string s;
+    //take the input
+    cin>>s;
+    //find the total number of subsets that can be there in the powerset
+    int count = 1<<s.length(); // pow(2,s.length());
+    //go through all the subset
+    for(int i=0;i<count;i++)
+    {   //go throught the all the bit in that set
+        for(int j=0;j<s.length();j++)
+        {   // if that number at that index is in the subset then it will be greater than 0
+            if((i&(1<<j))>0)
+            {
+                cout<<s[j];
+            }
+            
+        }
+        cout<<"\n";
+    }
+}
